@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class StudentApp {
     public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/testdb"; // DB name = testdb
-        String user = "root";   // your MySQL username
-        String password = "root"; // your MySQL password (change if different)
+        String url = "jdbc:mysql://localhost:3306/testdb";
+        String user = "root";
+        String password = "root";
 
         Scanner sc = new Scanner(System.in);
 
@@ -29,7 +29,7 @@ public class StudentApp {
             pstmt.setString(1, name);
             pstmt.setInt(2, age);
             pstmt.executeUpdate();
-            System.out.println("✅ Student Added Successfully!");
+            System.out.println(" Student Added Successfully!");
 
             // 4. Fetch & Display Data
             Statement stmt = con.createStatement();
@@ -42,6 +42,7 @@ public class StudentApp {
                         + ", Age: " + rs.getInt("age"));
             }
 
+            
             // 5. Close
             con.close();
         } catch (Exception e) {
